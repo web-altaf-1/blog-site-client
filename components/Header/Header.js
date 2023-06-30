@@ -1,5 +1,7 @@
+import { useRouter } from 'next/router';
 import React from 'react';
 const Header = () => {
+    const router = useRouter();
     return (
         <div className=''>
             <nav class="bg-white">
@@ -62,7 +64,7 @@ const Header = () => {
                                         </div>
                                     ) : (
                                         <div>
-                                            <button className='px-5 border rounded-full border-blue-700 hover:bg-blue-600 hover:text-white transition-colors duration-300 ease-in-out py-1'>Sign in</button>
+                                            <button onClick={()=>router.push('/auth/signin') } className='px-5 border rounded-full border-blue-700 hover:bg-blue-600 hover:text-white transition-colors duration-300 ease-in-out py-1'>Sign in</button>
                                         </div>
                                     )
                                 }
