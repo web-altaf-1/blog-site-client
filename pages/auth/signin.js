@@ -8,7 +8,7 @@ const signin = () => {
         <>
             <Header></Header>
             <div>
-                <div className='w-1/3 flex mx-auto justify-center flex-col mt-5'>
+                <div className='lg:w-1/3 w-auto flex lg:mx-auto mx-4 justify-center flex-col mt-5'>
                     <h2 className='text-center text-2xl font-bold' >Sign In</h2>
                     <div>
                         {/* <div>

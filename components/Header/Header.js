@@ -1,9 +1,28 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import MobileNav from '../MobileNav/MobileNav';
 const Header = () => {
     const router = useRouter();
+    const [hasScrolled, setHasScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.pageYOffset;
+            if (scrollTop > 0) {
+                setHasScrolled(true);
+            } else {
+                setHasScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
     return (
-        <div className=''>
+        <div className={`sticky top-0 z-50 ${hasScrolled ? 'shadow' : ''} hidden lg:block `}>
             <nav class="bg-white">
                 <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                     <div class="relative flex h-16 items-center justify-between">
@@ -22,19 +41,19 @@ const Header = () => {
                         </div>
                         <div class="flex flex-1 items-center justify-between">
                             <div class="flex flex-shrink-0 items-center">
-                                <img class="block h-10 w-auto lg:hidden" src="/altaf.png" alt="Your Company" />
-                                <img class="hidden h-16 w-auto lg:block" src="/altaf.png" alt="Your Company" />
+                                <img onClick={() => router.push('/')} class="block h-10 w-auto lg:hidden cursor-pointer" src="/altaf.png" alt="Altaf-logo" />
+                                <img onClick={() => router.push('/')} class="hidden h-16 w-auto lg:block cursor-pointer" src="/altaf.png" alt="Altaf-logo" />
                             </div>
                             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
                                 <div class="hidden sm:ml-6 sm:block me-3">
                                     <div class="flex space-x-4">
 
-                                        <a href="#" class="text-dark rounded-md px-2 py-2 text-sm font-medium" aria-current="page">Home</a>
-                                        <a href="#" class="text-dark  rounded-md px-3 py-2 text-sm font-medium">Articles</a>
-                                        <a href="#" class="text-dark rounded-md px-2 py-2 text-sm font-medium">Pages</a>
-                                        <a href="#" class="text-dark rounded-md px-2 py-2 text-sm font-medium">Pricing</a>
-                                        <a href="#" class="text-dark rounded-md px-2 py-2 text-sm font-medium">Faq</a>
+                                        <Link href="/" class="text-dark rounded-md px-2 py-2 text-sm font-medium" aria-current="page">Home</Link>
+                                        <Link href="/articles" class="text-dark  rounded-md px-3 py-2 text-sm font-medium">Articles</Link>
+                                        <Link href="/pages" class="text-dark rounded-md px-2 py-2 text-sm font-medium">Pages</Link>
+                                        <Link href="/pricing" class="text-dark rounded-md px-2 py-2 text-sm font-medium">Pricing</Link>
+                                        <Link href="/faq" class="text-dark rounded-md px-2 py-2 text-sm font-medium">Faq</Link>
                                     </div>
                                 </div>
                                 {
@@ -64,7 +83,7 @@ const Header = () => {
                                         </div>
                                     ) : (
                                         <div>
-                                            <button onClick={()=>router.push('/auth/signin') } className='px-5 border rounded-full border-blue-700 hover:bg-blue-600 hover:text-white transition-colors duration-300 ease-in-out py-1'>Sign in</button>
+                                            <button onClick={() => router.push('/auth/signin')} className='px-5 border rounded-full border-blue-700 hover:bg-blue-600 hover:text-white transition-colors duration-300 ease-in-out py-1'>Sign in</button>
                                         </div>
                                     )
                                 }
@@ -85,6 +104,7 @@ const Header = () => {
             </nav>
 
         </div>
+
     );
 };
 
