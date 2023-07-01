@@ -5,7 +5,7 @@ const NotFoundPage = () => {
     return (
         <div>
             <Header></Header>
-            
+            <img className='flex mx-auto' src="/not-found.svg" alt="" />
         </div>
     );
 };
