@@ -5,7 +5,7 @@ import React from 'react';
 const Articles = () => {
     return (
         <div className=''>
-            <div className='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 grid lg:grid-cols-4 sm:grid-cols-1 md:grid-cols-2 gap-8'>
+            <div className='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 grid lg:grid-cols-4 sm:grid-cols-1 md:grid-cols-2 gap-8 justify-center'>
                 {
                     [1, 2, 3, 4, 5, 6, 7, 8].map((aricle) => {
                         return (
