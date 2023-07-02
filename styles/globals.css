@@ -2,3 +2,16 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import 'tailwindcss/tailwind.css';
+
+.banner-content{
+    min-height: 367px;
+}
+@media screen and (max-width : 682px) {
+    .banner-content{
+        min-height: auto;
+        gap: 30px;
+    }
+    body{
+        background-color: #F9FCFF;
+    }
+}
