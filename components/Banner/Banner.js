@@ -5,11 +5,11 @@ const Banner = () => {
         <div className='ml-auto lg:ml-20 pl-1 flex items-center ' >
             <div className='banner-content left-side lg:w-1/2 sm:w-full flex flex-col justify-between pt-10 lg:pt-0'>
                 <h2 className='text-5xl font-bold hidden lg:block '>Read the most <br /> interesting articles</h2>
-                <p className='text-xl py-4 hidden lg:block'>DLorem ipsum dolor sit amet, consectetur adipiscing elit, <br /> sed do eiusmod tempor incididunt ut labore et dolore <br /> magna aliqua</p>
+                <p className='text-xl py-4 hidden lg:block'>Delve into a World of Fascinating <br /> Perspectives and Engaging Narratives, <br /> Unveiling Hidden Gems of Knowledge and Inspiring Ideas.</p>
                 {/* mobile  */}
                 <h2 className='text-4xl font-bold block lg:hidden sm:block text-center px-4'>Read the most  interesting articles</h2>
 
-                <p className='text-xl pb-3 block lg:hidden sm:block text-center'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                <p className='text-xl pb-3 block lg:hidden sm:block text-center'>Delve into a World of Fascinating Perspectives and Engaging Narratives, Unveiling Hidden Gems of Knowledge and Inspiring Ideas.</p>
 
                 <div className='hidden lg:block'>
                     <div className=' flex items-center justify-between ps-3 rounded border border-gray-200 relative shadow-lg mt-8 w-10/12'>
@@ -40,9 +40,9 @@ const Banner = () => {
                 <div className='pt-2 italic w-11/12 lg:w-full mx-auto pb-8 lg:pb-0'>
                     <p className='inline-block pe-3 pb-2'>Popular Tags :</p>
                     <div className='block lg:inline-block'>
-                        <div className='inline-block bg-blue-100 font-semibold text-blue-500 text-sm px-2 rounded rounded'>Design</div>
-                        <div className='inline-block bg-blue-100 font-semibold text-sm text-blue-500 px-2 rounded rounded ms-2'>User Experience</div>
-                        <div className='ms-2 inline-block font-semibold text-sm text-blue-500 bg-blue-100 px-2 rounded rounded'>User Interfaces</div>
+                        <div className='inline-block bg-blue-100 font-semibold text-blue-500 text-base px-2 rounded rounded'>Design</div>
+                        <div className='inline-block bg-blue-100 font-semibold text-base text-blue-500 px-2 rounded rounded ms-2'>User Experience</div>
+                        <div className='ms-2 inline-block font-semibold text-base text-blue-500 bg-blue-100 px-2 rounded rounded'>User Interfaces</div>
                     </div>
                 </div>
             </div>
